@@ -1,0 +1,10 @@
+The ``BaseGeometry`` class provides:
+
+``area(self)``
+    Raises ``Exception`` with the message:
+    ``area() is not implemented``
+
+``integer_validator(self, name, value)``
+    Validates that ``value`` is an integer greater than 0.
+    Raises ``TypeError`` if value is not an integer.
+    Raises ``ValueError`` if value is less than or equal to 0.

@@ -1,0 +1,5 @@
+The ``MyList`` class inherits from ``list`` and adds one method:
+
+``print_sorted(self)``
+    Prints the list in ascending sorted order without modifying
+    the original list.
