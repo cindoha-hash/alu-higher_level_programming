@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+"""Module that defines a square."""
+
+
 class Square:
+    """Class that defines a square."""
+
     def __init__(self, size=0):
         self.size = size
 
@@ -22,5 +27,5 @@ class Square:
         if self.__size == 0:
             print()
             return
-        for i in range(self.__size):
+        for _ in range(self.__size):
             print("#" * self.__size)
