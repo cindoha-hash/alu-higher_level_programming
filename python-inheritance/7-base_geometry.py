@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Module that defines BaseGeometry with validation."""
+"""Module that defines the BaseGeometry class."""
 
 
 class BaseGeometry:
-    """Base geometry class."""
+    """Represent base geometry."""
 
     def area(self):
         """Raise an exception because area is not implemented."""
