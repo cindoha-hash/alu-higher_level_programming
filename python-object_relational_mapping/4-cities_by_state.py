@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""List cities with states."""
+"""Lists all cities with their state names."""
+
 import MySQLdb
 import sys
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -12,13 +14,12 @@ if _name_ == "_main_":
         db=sys.argv[3]
     )
     cur = db.cursor()
-    cur.execute("""
-        SELECT cities.id, cities.name, states.name
-        FROM cities
-        JOIN states ON cities.state_id = states.id
-        ORDER BY cities.id ASC
-    """)
-    for row in cur.fetchall():
-        print(row)
+    cur.execute(
+        "SELECT cities.id, cities.name, states.name "
+        "FROM cities JOIN states ON cities.state_id = states.id "
+        "ORDER BY cities.id ASC"
+    )
+    for city in cur.fetchall():
+        print(city)
     cur.close()
     db.close()

@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Safe filter (no SQL injection)."""
+"""Lists states matching user input safely."""
+
 import MySQLdb
 import sys
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -16,7 +18,7 @@ if _name_ == "_main_":
         "SELECT * FROM states WHERE name = %s ORDER BY id ASC",
         (sys.argv[4],)
     )
-    for row in cur.fetchall():
-        print(row)
+    for state in cur.fetchall():
+        print(state)
     cur.close()
     db.close()

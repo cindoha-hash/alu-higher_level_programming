@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-"""Filter states starting with N."""
+"""Lists states starting with N."""
+
 import MySQLdb
 import sys
 
-if _name_ == "_main_":
+
+if __name__ == "__main__":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -12,8 +14,12 @@ if _name_ == "_main_":
         db=sys.argv[3]
     )
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
-    for row in cur.fetchall():
-        print(row)
+    cur.execute(
+        "SELECT * FROM states "
+        "WHERE name LIKE BINARY 'N%' "
+        "ORDER BY id ASC"
+    )
+    for state in cur.fetchall():
+        print(state)
     cur.close()
     db.close()
