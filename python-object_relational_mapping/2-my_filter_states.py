@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Lists states matching user input."""
+"""Lists states matching user input exactly."""
 
 import MySQLdb
 import sys
 
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -14,9 +14,11 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
-        sys.argv[4]
-    )
+    query = (
+        "SELECT * FROM states "
+        "WHERE BINARY name = '{}' "
+        "ORDER BY id ASC"
+    ).format(sys.argv[4])
     cur.execute(query)
     for state in cur.fetchall():
         print(state)
