@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for printing a formatted name."""
+"""This module provides a function that prints a full name."""
 
 
 def say_my_name(first_name, last_name=""):

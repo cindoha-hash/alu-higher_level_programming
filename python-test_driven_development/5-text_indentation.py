@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-"""Module for printing text with indentation after punctuation."""
+"""This module provides a function that prints indented text."""
 
 
 def text_indentation(text):
-    """Print text with two new lines after ., ? and :."""
+    """Print text with two new lines after '.', '?' and ':'."""
     if type(text) is not str:
         raise TypeError("text must be a string")
 
-    buffer = ""
+    current = ""
     for char in text:
-        buffer += char
+        current += char
         if char in ".?:":
-            print(buffer.strip())
+            print(current.strip())
             print()
-            buffer = ""
-    if buffer.strip():
-        print(buffer.strip(), end="")
+            current = ""
+    if current.strip():
+        print(current.strip(), end="")

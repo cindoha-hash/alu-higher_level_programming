@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""Module for printing a square of # characters."""
+"""This module provides a function that prints a square."""
 
 
 def print_square(size):
     """Print a square with the character #."""
     if type(size) is float and size < 0:
         raise TypeError("size must be an integer")
-    if type(size) not in [int] or type(size) is bool:
+    if type(size) is not int:
         raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")

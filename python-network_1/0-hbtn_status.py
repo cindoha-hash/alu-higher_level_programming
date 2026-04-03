@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-"""Fetches ALU intranet status using urllib."""
+"""Fetch URL using urllib"""
 
 from urllib import request
-
 
 if __name__ == "__main__":
     with request.urlopen("https://alu-intranet.hbtn.io/status") as response:
